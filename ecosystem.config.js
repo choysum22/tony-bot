@@ -1,7 +1,7 @@
 /* eslint-disable comma-dangle */
 module.exports = {
   apps : [{
-    name: "app",
+    name: "discord-bot",
     script: "./index.js",
     instances: "max",
     env: {
