@@ -5,6 +5,6 @@ module.exports = {
 		.setName('stealplay')
 		.setDescription('Steal play tony steal play again.'),
 	async execute(interaction) {
-		await interaction.reply('又 <@322975387640528896>');
+		await interaction.reply('<@322975387640528896> 又');
 	},
 };
