@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
-    "start-pm2": "pm2 start index.js --watch",
+    "start-pm2": "pm2-runtime start ecosystem.config.js --env production --watch" ,
     "stop": "pm2 stop index.js",
     "lint": "eslint ."
   },
