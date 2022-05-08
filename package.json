@@ -18,6 +18,8 @@
     "@discordjs/rest": "^0.4.1",
     "discord-api-types": "^0.32.1",
     "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "firebase": "^9.8.0",
     "pm2": "^5.2.0"
   },
   "devDependencies": {
