@@ -8,7 +8,7 @@ const { Client, Collection, Intents } = require('discord.js');
 // const { token } = require('./config.json');
 
 // Create a new client instance
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
@@ -31,12 +31,46 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
+// uid for listen messages
 const tonyUID = "322975387640528896";
 
-client.on("message", function(message) {
-    if (message.author.id === tonyUID) {
+// chad word list
+const chadWords = [
+	"chad",
+	"gigachad",
+	"CHAD",
+	"GIGACHAD",
+	"Chad",
+	"Gigachad",
+	"GAYGACHAD",
+	"GAYCHAD",
+	"GAYGIGACHAD",
+	"giga",
+	"GIGA",
+]
+
+// GIGACHAD message
+let gigachad = "https://i.kym-cdn.com/photos/images/original/002/052/349/20d.gif";
+
+client.on("messageCreate", message => {
+	if (message.author.bot) return false; // If the message was sent by a bot, return false
+
+	console.log(message.content);	
+
+	if (message.author.id == tonyUID) {
         message.reply('<:Teenytinytony:971700871274573854>');
+		return false; // If the message was sent by the tony, return false
     }
+
+	// check for chadWord
+	for (let i = 0; i < chadWords.length; i++) {
+		if (message.content.includes(chadWords[i])) {
+			message.channel.send("DID SOMEONE CALL ME?");
+			message.channel.send(gigachad);
+			break;
+		}
+	}
+
 });
 
 client.on('interactionCreate', async interaction => {
