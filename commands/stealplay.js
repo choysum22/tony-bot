@@ -6,11 +6,11 @@ const { getDatabase, child, ref, set, update, get } = require("firebase/database
 
 var stealPlayCount = 0;
 
-function getStealPlayCount()  {
+async function getStealPlayCount()  {
 	const db = getDatabase();
 	const dbRef = ref(db);
 
-	get(child(dbRef, 'stealplay/count')).then((snapshot) => {
+	await get(child(dbRef, 'stealplay/count')).then((snapshot) => {
 		if (snapshot.exists()) {
 			stealPlayCount = snapshot.val() + 1;
 			console.log(`Tony's steal play count is ${stealPlayCount}`);
