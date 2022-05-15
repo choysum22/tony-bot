@@ -79,7 +79,6 @@ client.on("messageCreate", (message) => {
       message.react("🇬"); // "G"
       message.react("🇦"); // "A"
       message.react("🇾"); // "Y"
-      message.react("👨‍❤️‍👨");
       break;
     }
   }
