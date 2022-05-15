@@ -6,9 +6,9 @@ const { initializeApp } = require("firebase/app");
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA1n7E5gi5Rrt_g04eZbIKediYlh1PH0g0",
+    apiKey: process.env.FIREBASE_AUTH_API_KEY,
     authDomain: "discord-bot-tony.firebaseapp.com",
-    databaseURL: "https://discord-bot-tony-default-rtdb.asia-southeast1.firebasedatabase.app",
+    databaseURL: process.env.FIREBASE_DATABASE_URL,
     projectId: "discord-bot-tony",
     storageBucket: "discord-bot-tony.appspot.com",
     messagingSenderId: "285993335461",
